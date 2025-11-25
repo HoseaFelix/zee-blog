@@ -183,3 +183,22 @@ html {
 .dark .prose blockquote {
   color: oklch(0.708 0 0);
 }
+
+/* Ensure headings inside prose have explicit colors for light/dark mode */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: oklch(0.145 0 0);
+}
+
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4,
+.dark .prose h5,
+.dark .prose h6 {
+  color: oklch(0.985 0 0);
+}

@@ -150,7 +150,7 @@ export default async function PostPage({ params }) {
           <div className="mb-8"><AdPlaceholder size="medium" /></div>
 
           {/* Article content: render imported MDX component if available */}
-          <div className="prose prose-lg dark:prose-dark max-w-none">
+          <div className="prose prose-lg max-w-none">
             {/* Render the full post HTML using `marked` to avoid hydration
                 issues with MDXRemote on client navigation. `marked.parse`
                 is used for a reliable Markdown -> HTML conversion here. */}
