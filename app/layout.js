@@ -1,10 +1,25 @@
 // app/layout.jsx
 import './globals.css';
+import { siteMetadata } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Your Site Title',
-  description: 'Your site description',
+  title: siteMetadata.title,
+  description: siteMetadata.description,
   themeColor: '#2563eb',
+  openGraph: {
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    url: siteMetadata.siteUrl,
+    siteName: siteMetadata.title,
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    creator: siteMetadata.social.twitter,
+  },
 };
 
 export default function RootLayout({ children }) {
