@@ -8,7 +8,11 @@ import PostCard from '@/components/PostCard';
 import AdPlaceholder from '@/components/AdPlaceholder';
 import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/mdx';
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote } from 'next-mdx-remote/rsc';
+// NOTE: MDXRemote sometimes causes client-side hydration/display issues
+// during app-router navigations. To ensure the full post content always
+// appears when clicking "Read more", we'll render HTML produced by
+// `marked` (safe for local content) as the primary renderer.
+// The MDXRemote path is retained above for future improvements.
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import { marked } from 'marked';
@@ -147,11 +151,10 @@ export default async function PostPage({ params }) {
 
           {/* Article content: render imported MDX component if available */}
           <div className="prose prose-lg dark:prose-dark max-w-none">
-            {mdxSource ? (
-              <MDXRemote {...mdxSource} components={MDXComponents} />
-            ) : (
-              <div dangerouslySetInnerHTML={{ __html: mdToHtml(post.content) }} />
-            )}
+            {/* Render the full post HTML using `marked` to avoid hydration
+                issues with MDXRemote on client navigation. `marked.parse`
+                is used for a reliable Markdown -> HTML conversion here. */}
+            <div dangerouslySetInnerHTML={{ __html: mdToHtml(post.content) }} />
           </div>
 
           {/* Tags */}
