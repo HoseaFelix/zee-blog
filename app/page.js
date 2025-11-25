@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-// import MainLayout from '@/layouts/MainLayout';
+import MainLayout from '@/layouts/MainLayout';
 import AdPlaceholder from '@/components/AdPlaceholder';
 import { getAllPosts, getAllCategories } from '@/lib/mdx';
 import { siteMetadata } from '@/lib/seo';
@@ -15,11 +15,13 @@ export default async function Home() {
   const recentPosts = posts.slice(3, 9);
 
   return (
-    <>
+    <MainLayout>
+      
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="text-cent>er max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
               Expert Insights on Finance, Tech & Business
             </h1>
@@ -108,7 +110,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
-    </>
+    </MainLayout>
 
   );
 }

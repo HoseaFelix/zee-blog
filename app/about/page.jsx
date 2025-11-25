@@ -28,7 +28,7 @@ export default function AboutPage() {
           <div className="prose prose-lg dark:prose-dark max-w-none">
             <h2>Our Mission</h2>
             <p>
-              Modern Blog is dedicated to providing high-quality, actionable content on personal
+              ZEE BlOG is dedicated to providing high-quality, actionable content on personal
               finance, insurance, investing, technology, and business. Our mission is to help
               readers make informed decisions and achieve their financial and professional goals.
             </p>

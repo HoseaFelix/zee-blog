@@ -5,10 +5,13 @@ import PostCard from '@/components/PostCard';
 import { getAllCategories, getPostsByCategory } from '@/lib/mdx';
 import { siteMetadata } from '@/lib/seo';
 
-export default function CategoryPage({ params }) {
-  const posts = getPostsByCategory(params.slug);
+export default async function CategoryPage({ params }) {
+  const resolvedParams = await params;
+  const slug = resolvedParams?.slug;
+
+  const posts = getPostsByCategory(slug);
   const categories = getAllCategories();
-  const category = categories.find((c) => c.slug === params.slug);
+  const category = categories.find((c) => c.slug === slug);
 
   if (!category) {
     return <div>Category not found</div>;

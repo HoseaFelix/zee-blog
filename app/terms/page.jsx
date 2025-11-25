@@ -27,14 +27,14 @@ export default function Terms() {
 
             <h2>Agreement to Terms</h2>
             <p>
-              By accessing and using Modern Blog, you agree to be bound by these Terms of Service
+              By accessing and using ZEE BlOG, you agree to be bound by these Terms of Service
               and all applicable laws and regulations.
             </p>
 
             <h2>Use License</h2>
             <p>
-              Permission is granted to temporarily download one copy of the materials on Modern
-              Blog for personal, non-commercial transitory viewing only.
+              Permission is granted to temporarily download one copy of the materials on ZEE
+              BlOG for personal, non-commercial transitory viewing only.
             </p>
 
             <h3>This license shall not allow you to:</h3>
@@ -47,7 +47,7 @@ export default function Terms() {
 
             <h2>Disclaimer</h2>
             <p>
-              The materials on Modern Blog are provided on an 'as is' basis. We make no warranties,
+              The materials on ZEE BlOG are provided on an 'as is' basis. We make no warranties,
               expressed or implied, and hereby disclaim all other warranties.
             </p>
 
@@ -60,7 +60,7 @@ export default function Terms() {
 
             <h2>External Links</h2>
             <p>
-              Modern Blog may contain links to third-party websites. We have no control over and
+              ZEE BlOG may contain links to third-party websites. We have no control over and
               assume no responsibility for the content, privacy policies, or practices of any
               third-party sites.
             </p>
@@ -83,7 +83,7 @@ export default function Terms() {
 
             <h2>Limitation of Liability</h2>
             <p>
-              Modern Blog shall not be liable for any damages arising out of the use or inability
+              ZEE BlOG shall not be liable for any damages arising out of the use or inability
               to use the materials on our website.
             </p>
 

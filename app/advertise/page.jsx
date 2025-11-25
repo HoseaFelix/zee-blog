@@ -1,7 +1,4 @@
 
-// ============================================
-// src/pages/advertise.jsx
-// ============================================
 import React from 'react';
 import MainLayout from '@/layouts/MainLayout';
 import { siteMetadata } from '@/lib/seo';
@@ -29,7 +26,7 @@ export default function Advertise() {
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg dark:prose-dark max-w-none">
-            <h2>Why Advertise With Modern Blog?</h2>
+            <h2>Why Advertise With ZEE Blog?</h2>
             
             <div className="grid md:grid-cols-3 gap-6 not-prose my-8">
               <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">

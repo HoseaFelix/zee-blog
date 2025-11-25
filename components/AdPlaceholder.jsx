@@ -1,6 +1,4 @@
-// ============================================
-// src/components/AdPlaceholder.jsx
-// ============================================
+
 import React from 'react';
 
 export default function AdPlaceholder({ size = 'medium' }) {

@@ -67,14 +67,7 @@ export default async function PostPage({ params }) {
     }
   }
 
-  // debug: log post metadata (remove in production)
-  console.log(post)
-
-  // expose simple debug flags in the rendered page to help diagnose MDX rendering
-  const debugInfo = {
-    hasMdxSource: !!mdxSource,
-    mdxCompiledLength: mdxSource ? (mdxSource.compiledSource ? mdxSource.compiledSource.length : null) : null,
-  };
+  // Production: no debug logging or debug UI
 
   const relatedPosts = getRelatedPosts(post);
   const categorySlug = (post.category || 'uncategorized').toLowerCase().replace(/\s+/g, '-');
@@ -153,33 +146,12 @@ export default async function PostPage({ params }) {
           <div className="mb-8"><AdPlaceholder size="medium" /></div>
 
           {/* Article content: render imported MDX component if available */}
-          <div className="mb-4">
-            <div className="text-xs text-gray-500">Debug: MDX serialized? {String(debugInfo.hasMdxSource)}</div>
-            {debugInfo.mdxCompiledLength !== null && (
-              <div className="text-xs text-gray-500">MDX compiled length: {debugInfo.mdxCompiledLength}</div>
-            )}
-          </div>
           <div className="prose prose-lg dark:prose-dark max-w-none">
             {mdxSource ? (
               <MDXRemote {...mdxSource} components={MDXComponents} />
             ) : (
-              // Fallback: show raw MDX/plain text so it's visible while debugging
-              <pre className="whitespace-pre-wrap text-sm text-gray-700 dark:text-gray-300">{post.content}</pre>
+              <div dangerouslySetInnerHTML={{ __html: mdToHtml(post.content) }} />
             )}
-          </div>
-          {/* Always include a collapsed raw-content view for debugging visibility */}
-          <details className="mt-6 bg-gray-50 dark:bg-gray-800 p-4 rounded">
-            <summary className="cursor-pointer text-sm text-gray-600 dark:text-gray-300">Show raw MDX content (debug)</summary>
-            <pre className="whitespace-pre-wrap text-sm text-gray-700 dark:text-gray-300 mt-2">{post.content}</pre>
-          </details>
-
-          {/* HTML fallback (server-side) rendered from the raw markdown for visibility */}
-          <div className="mt-6">
-            <div className="text-sm text-gray-500 mb-2">Fallback HTML (server-rendered) — visible if MDX didn't render:</div>
-            <div
-              className="prose prose-lg dark:prose-dark max-w-none bg-white dark:bg-gray-900 p-4 rounded"
-              dangerouslySetInnerHTML={{ __html: mdToHtml(post.content) }}
-            />
           </div>
 
           {/* Tags */}

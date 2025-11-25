@@ -36,7 +36,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <span className="text-2xl font-bold text-primary-600 dark:text-primary-400">
-                Modern Blog
+                ZEE BlOG
               </span>
             </Link>
           </div>

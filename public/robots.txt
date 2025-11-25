@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Point to sitemap (the app exposes /api/sitemap)
+# Updated for the user's purchased domain
+Sitemap: https://zee-blog.name.ng/api/sitemap

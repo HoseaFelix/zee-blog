@@ -27,7 +27,7 @@ export default function Privacy() {
 
             <h2>Introduction</h2>
             <p>
-              This Privacy Policy describes how Modern Blog collects, uses, and shares your
+              This Privacy Policy describes how ZEE BlOG collects, uses, and shares your
               personal information when you visit our website.
             </p>
 
@@ -70,6 +70,23 @@ export default function Privacy() {
               <li>Email service providers for newsletters</li>
               <li>Advertising networks (Google AdSense, etc.)</li>
             </ul>
+
+            <h2>Ads and Cookies</h2>
+            <p>
+              We display advertisements on our site, which may include ads served by Google AdSense
+              and other advertising partners. These advertising networks may use cookies and
+              similar technologies to provide personalized ads based on your browsing activity.
+            </p>
+            <p>
+              You can opt out of personalized advertising from Google by visiting the
+              <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">Google Ad Settings</a>
+              or by using the <a href="https://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer">opt-out tools</a> provided by the Network Advertising Initiative.
+            </p>
+            <p>
+              If you are located in the European Economic Area (EEA) or the UK, we may show non-essential
+              cookies only after obtaining your consent. Please contact us via the <a href="/contact">contact page</a>
+              if you have questions about cookies or to request removal of your data.
+            </p>
 
             <h2>Data Security</h2>
             <p>

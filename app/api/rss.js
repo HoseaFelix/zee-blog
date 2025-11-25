@@ -6,7 +6,8 @@ import RSS from 'rss';
 import { getAllPosts } from '@/lib/mdx';
 import { siteMetadata } from '@/lib/seo';
 
-export default function handler(req, res) {
+// App Router GET handler for /api/rss
+export async function GET() {
   const posts = getAllPosts();
   const siteUrl = siteMetadata.siteUrl;
 
@@ -38,8 +39,14 @@ export default function handler(req, res) {
     });
   });
 
-  res.setHeader('Content-Type', 'application/rss+xml; charset=UTF-8');
-  res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate');
-  res.write(feed.xml());
-  res.end();
+  return new Response(feed.xml(), {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/rss+xml; charset=UTF-8',
+      'Cache-Control': 's-maxage=86400, stale-while-revalidate',
+    },
+  });
 }
+
+// Export default for compatibility with route-entry importers that expect a default export.
+export default GET;
