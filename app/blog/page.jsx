@@ -4,7 +4,6 @@ import Link from 'next/link';
 import MainLayout from '@/layouts/MainLayout';
 import PostCard from '@/components/PostCard';
 import SearchBar from '@/components/SearchBar';
-import AdPlaceholder from '@/components/AdPlaceholder';
 import Pagination from '@/components/Pagination';
 import { getAllPosts } from '@/lib/mdx';
 import { paginateArray } from '@/lib/utils';
@@ -59,7 +58,7 @@ export default async function BlogPage({ searchParams }) {
                 <PostCard post={post} />
                 {(index + 1) % 6 === 0 && index + 1 < paginatedPosts.length && (
                   <div className="md:col-span-2 lg:col-span-3">
-                    <AdPlaceholder size="medium" />
+                    {/* Ad removed (was AdPlaceholder) */}
                   </div>
                 )}
               </React.Fragment>
@@ -76,7 +75,7 @@ export default async function BlogPage({ searchParams }) {
       {/* Ad Section */}
       <section className="py-8 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AdPlaceholder size="large" />
+          {/* Ad removed (was AdPlaceholder) */}
         </div>
       </section>
     </MainLayout>

@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import MainLayout from '@/layouts/MainLayout';
-import AdPlaceholder from '@/components/AdPlaceholder';
 import { getAllPosts, getAllCategories } from '@/lib/mdx';
 import { siteMetadata } from '@/lib/seo';
 import PostCard from '@/components/PostCard';
@@ -60,7 +59,7 @@ export default async function Home() {
       {/* Ad Placeholder */}
       <section className="py-8 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AdPlaceholder size="large" />
+          {/* Ad removed (was AdPlaceholder) */}
         </div>
       </section>
 

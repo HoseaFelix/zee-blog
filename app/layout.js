@@ -40,6 +40,12 @@ export default function RootLayout({ children }) {
 
         {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
+        {/* Google AdSense script (placed site-wide) */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3937849472389408"
+          crossOrigin="anonymous"
+        ></script>
       </head>
       <body>{children}</body>
     </html>

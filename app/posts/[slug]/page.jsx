@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 import MainLayout from '@/layouts/MainLayout';
 import PostCard from '@/components/PostCard';
-import AdPlaceholder from '@/components/AdPlaceholder';
 import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/mdx';
 import { serialize } from 'next-mdx-remote/serialize';
 // NOTE: MDXRemote sometimes causes client-side hydration/display issues
@@ -146,8 +145,7 @@ export default async function PostPage({ params }) {
             <Image src={post.featuredImage} alt={post.title} fill className="object-cover" priority />
           </div>
 
-          {/* Ad */}
-          <div className="mb-8"><AdPlaceholder size="medium" /></div>
+          {/* Ad removed (was AdPlaceholder) */}
 
           {/* Article content: render imported MDX component if available */}
           <div className="prose prose-lg max-w-none">
@@ -171,9 +169,7 @@ export default async function PostPage({ params }) {
       </article>
 
       {/* Advertisement */}
-      <section className="py-8 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><AdPlaceholder size="large" /></div>
-      </section>
+      {/* Advertisement removed (was AdPlaceholder) */}
 
       {/* Related posts */}
       {relatedPosts && relatedPosts.length > 0 && (
