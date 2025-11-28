@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         ></script>
 
-        {/* Google Analytics Tag (gtag.js) */}
+        {/* Google Analytics Tag (gtag.js) done*/}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-LPF26F4CK5"
