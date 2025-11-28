@@ -40,11 +40,27 @@ export default function RootLayout({ children }) {
 
         {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
-        {/* Google AdSense script (placed site-wide) and done */}
+        {/* Google AdSense script (placed site-wide) */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3937849472389408"
           crossOrigin="anonymous"
+        ></script>
+
+        {/* Google Analytics Tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-LPF26F4CK5"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-LPF26F4CK5');
+            `,
+          }}
         ></script>
       </head>
       <body>{children}</body>
