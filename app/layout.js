@@ -40,12 +40,14 @@ export default function RootLayout({ children }) {
 
         {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
-        {/* Google AdSense script (placed site-wide) */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3937849472389408"
-          crossOrigin="anonymous"
-        ></script>
+        {/* Google AdSense script (placed site-wide). Use env var NEXT_PUBLIC_ADSENSE_CLIENT */}
+        {process.env.NEXT_PUBLIC_ADSENSE_CLIENT && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT}`}
+            crossOrigin="anonymous"
+          ></script>
+        )}
 
         {/* Google Analytics Tag (gtag.js) done*/}
         <script
@@ -63,7 +65,7 @@ export default function RootLayout({ children }) {
           }}
         ></script>
       </head>
-      <body>{children}</body>
+      <body className="min-h-screen flex flex-col">{children}</body>
     </html>
   );
 }
