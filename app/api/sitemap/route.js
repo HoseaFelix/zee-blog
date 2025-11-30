@@ -20,7 +20,7 @@ export async function GET() {
       { url: '/about', priority: '0.7', changefreq: 'monthly' },
       { url: '/contact', priority: '0.6', changefreq: 'monthly' },
       { url: '/advertise', priority: '0.6', changefreq: 'monthly' },
-      { url: '/resources', priority: '0.7', changefreq: 'weekly' },
+  // resources page removed (was causing thin-content concerns). Omit from sitemap.
       { url: '/authors', priority: '0.7', changefreq: 'weekly' },
       { url: '/privacy', priority: '0.3', changefreq: 'yearly' },
       { url: '/terms', priority: '0.3', changefreq: 'yearly' },

@@ -1,5 +1,6 @@
 // app/posts/[slug]/page.jsx
 import React from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -46,6 +47,18 @@ export default async function PostPage({ params }) {
     author: postData.author || 'Unknown Author',
   };
 
+  // Ensure we have a summary for meta — fall back to a plain-text excerpt of the content
+  const summary = post.summary || (post.content ? String(post.content).replace(/[#>*`\-\[\]\(\)\n]/g, ' ').trim().slice(0, 160) : '');
+
+  // Ensure read time is present: estimate if missing (200 words/minute)
+  const estimateReadTime = (text) => {
+    if (!text) return '1 min read';
+    const words = String(text).split(/\s+/).filter(Boolean).length;
+    const minutes = Math.max(1, Math.round(words / 200));
+    return `${minutes} min read`;
+  };
+  const readTime = post.readTime || estimateReadTime(post.content);
+
   // Instead of attempting a dynamic import (which Next's bundler can't
   // statically analyze for arbitrary slugs), serialize the MDX content we
   // already read in `getPostBySlug` using `next-mdx-remote` and render it
@@ -90,13 +103,22 @@ export default async function PostPage({ params }) {
     <MainLayout
       seo={{
         title: `${post.title} - ${siteMetadata.title}`,
-        description: post.summary,
+        description: summary,
         canonical: `${siteMetadata.siteUrl}/posts/${post.slug}`,
         image: `${siteMetadata.siteUrl}${post.featuredImage}`,
         type: 'article',
         jsonLd: [articleSchema, breadcrumbSchema],
       }}
     >
+      {/* Additional article meta tags that help crawlers / ad review */}
+      <Head>
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:author" content={post.author} />
+        {post.tags && post.tags.map((t) => (
+          <meta key={t} property="article:tag" content={t} />
+        ))}
+        <meta name="robots" content="index, follow" />
+      </Head>
       <article className="py-12 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumbs */}

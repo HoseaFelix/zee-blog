@@ -3,7 +3,6 @@
 // ============================================
 import React from 'react';
 import Link from 'next/link';
-import Newsletter from './Newsletter';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -17,7 +16,6 @@ export default function Footer() {
     ],
     Resources: [
       { name: 'Blog', href: '/blog' },
-      { name: 'Resources', href: '/resources' },
     ],
     Legal: [
       { name: 'Privacy Policy', href: '/privacy' },
@@ -83,11 +81,6 @@ export default function Footer() {
               </ul>
             </div>
           ))}
-        </div>
-
-        {/* Newsletter */}
-        <div className="mt-12 border-t border-gray-200 dark:border-gray-800 pt-8">
-          <Newsletter />
         </div>
 
         {/* Copyright */}

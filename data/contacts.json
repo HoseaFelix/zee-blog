@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Hosea Felix",
+    "email": "felixhosea61@gmail.com",
+    "subject": "test",
+    "message": "this is just a test",
+    "date": "2025-11-30T22:10:58.833Z",
+    "sent": false
+  },
+  {
+    "name": "Hosea Felix",
+    "email": "felixhosea61@gmail.com",
+    "subject": "test",
+    "message": "this was just a test",
+    "date": "2025-11-30T22:12:44.539Z",
+    "sent": false
+  },
+  {
+    "name": "Dev Test",
+    "email": "test@example.com",
+    "subject": "SMTP test",
+    "message": "Automated SMTP test from repo assistant",
+    "date": "2025-11-30T22:35:33.439Z",
+    "sent": true
+  },
+  {
+    "name": "Hosea Felix",
+    "email": "felixhosea61@gmail.com",
+    "subject": "test",
+    "message": "a test",
+    "date": "2025-11-30T22:37:07.996Z",
+    "sent": true
+  }
+]

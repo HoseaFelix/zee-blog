@@ -1,0 +1,7 @@
+# ads.txt placeholder
+# Replace PUB_ID with your Google AdSense Publisher ID (e.g., pub-1234567890123456)
+# Format: <domain>, <publisher id>, <relationship>, <cert authority id>
+# Example for Google AdSense:
+google.com, pub-PUB_ID, DIRECT, f08c47fec0942fa0
+
+# Add any other authorized sellers on separate lines.
