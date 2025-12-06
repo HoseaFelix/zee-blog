@@ -37,12 +37,14 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
-        {/* propush */}
-        <meta name="pushsdk" content="01c010d176ef9773235b92eb4440c111"/>
+
+        {/* ProPush meta */}
+        <meta name="pushsdk" content="01c010d176ef9773235b92eb4440c111" />
 
         {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
-        {/* Google AdSense script (placed site-wide). Use env var NEXT_PUBLIC_ADSENSE_CLIENT */}
+
+        {/* Google AdSense script */}
         {process.env.NEXT_PUBLIC_ADSENSE_CLIENT && (
           <script
             async
@@ -51,7 +53,7 @@ export default function RootLayout({ children }) {
           ></script>
         )}
 
-        {/* Google Analytics Tag (gtag.js) done*/}
+        {/* Google Analytics */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-LPF26F4CK5"
@@ -67,7 +69,11 @@ export default function RootLayout({ children }) {
           }}
         ></script>
       </head>
-      <body className="min-h-screen flex flex-col">{children}</body>
+
+      <body className="min-h-screen flex flex-col">
+        {/* Load ProPush script safely on client */}
+        {children}
+      </body>
     </html>
   );
 }
