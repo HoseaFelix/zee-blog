@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
         {/* propush */}
-        <meta name="pushsdk" content="01c010d176ef9773235b92eb4440c111"></meta>
+        <meta name="pushsdk" content="01c010d176ef9773235b92eb4440c111"/>
 
         {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
