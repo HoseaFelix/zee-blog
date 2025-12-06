@@ -37,6 +37,8 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
+        {/* propush */}
+        <meta name="pushsdk" content="01c010d176ef9773235b92eb4440c111"></meta>
 
         {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
