@@ -1,4 +1,5 @@
 // app/layout.jsx
+import ProPushLoader from '@/components/proPushLoader';
 import './globals.css';
 import { siteMetadata } from '@/lib/seo';
 
@@ -72,6 +73,7 @@ export default function RootLayout({ children }) {
 
       <body className="min-h-screen flex flex-col">
         {/* Load ProPush script safely on client */}
+        <ProPushLoader/>
         {children}
       </body>
     </html>
